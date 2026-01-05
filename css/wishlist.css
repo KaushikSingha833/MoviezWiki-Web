@@ -1,0 +1,191 @@
+/* Wishlist Section */
+.wishlist-section {
+    padding: 2rem 0;
+    min-height: calc(100vh - 180px); /* Adjust based on header/footer height */
+}
+
+.wishlist-section h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #f5c518;
+}
+
+/* Wishlist Movies Container */
+.wishlist-movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Movie Card within Wishlist (adjustments for wishlist context) */
+.wishlist-movies .movie-card {
+    width: 100%; /* Ensure cards take full width of their grid column */
+    height: 300px;
+    margin: 0; /* Remove any default margins */
+    position: relative;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.4s ease, z-index 0.4s ease;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.wishlist-movies .movie-card .movie-card-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.wishlist-movies .movie-card:hover .movie-card-poster {
+    filter: brightness(0.4);
+    transform: scale(1.05);
+}
+
+.wishlist-movies .movie-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    box-sizing: border-box;
+}
+
+.wishlist-movies .movie-card:hover .movie-card-content {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+}
+
+.wishlist-movies .movie-card-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.wishlist-movies .movie-card-content p {
+    margin: 0 0 1rem 0;
+    font-size: 0.8rem;
+    color: #ccc;
+    max-height: 60px;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+}
+
+.wishlist-movies .movie-rating {
+    color: #f5c518;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.wishlist-movies .movie-rating svg {
+    margin-right: 5px;
+}
+
+.wishlist-movies .play-trailer-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #f5c518;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.wishlist-movies .movie-card .wishlist-icon {
+    color: #f5c518; /* Always yellow when in wishlist */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+}
+
+.wishlist-movies .movie-card .wishlist-icon:hover {
+    background-color: rgba(255, 0, 0, 0.7); /* Red on hover to indicate removal */
+    color: #fff;
+}
+
+/* Empty Wishlist Message */
+.empty-wishlist {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    margin-top: 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.empty-wishlist h2 {
+    font-size: 2rem;
+    color: #f5c518;
+    margin-bottom: 1rem;
+}
+
+.empty-wishlist p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.empty-wishlist .browse-movies-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #f5c518;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.empty-wishlist .browse-movies-btn:hover {
+    background-color: #d4af37;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .wishlist-movies {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .wishlist-section h1 {
+        font-size: 2rem;
+    }
+
+    .empty-wishlist h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wishlist-movies {
+        grid-template-columns: 1fr;
+    }
+
+    .wishlist-movies .movie-card {
+        width: 80%;
+        margin: 0 auto;
+    }
+}

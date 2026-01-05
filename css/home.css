@@ -1,0 +1,829 @@
+/* Hero Section */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #f5c518;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #d4af37;
+}
+
+/* Video Playlist Section */
+.video-playlist-section {
+    padding: 2rem 0;
+    background-color: #1a1a1a;
+}
+
+.video-playlist-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.video-playlist-content {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.video-player-container {
+    flex: 2;
+    min-width: 320px; /* Minimum width for the video player */
+}
+
+.video-list-container {
+    flex: 1;
+    min-width: 280px; /* Minimum width for the video list */
+    background-color: #222;
+    border-radius: 8px;
+    padding: 1rem;
+    max-height: 400px; /* Match video player height */
+    overflow-y: auto; /* Enable scrolling for long lists */
+}
+
+#video-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.video-list-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+    transition: background-color 0.3s ease;
+}
+
+.video-list-item:last-child {
+    border-bottom: none;
+}
+
+.video-list-item:hover,
+.video-list-item.active {
+    background-color: #333;
+}
+
+.video-list-item img {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.video-info h3 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.video-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+/* Featured Movie Section */
+.featured-movie-section {
+    padding: 2rem 0;
+    background-color: #1a1a1a;
+}
+
+.featured-movie-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 1.5rem;
+}
+
+.featured-movie-poster {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.featured-movie-details h3 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.featured-movie-details p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.movie-meta {
+    font-size: 0.9rem;
+    color: #f5c518;
+    margin-bottom: 1rem;
+}
+
+.movie-meta span {
+    margin-right: 10px;
+}
+
+/* Movies Section */
+.movies-section {
+    padding: 2rem 0;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 2rem;
+}
+
+#celebrities-swiper {
+    height: 120px; /* Reduced height for celebrities section to eliminate gap */
+}
+
+.swiper-slide {
+    width: 220px; /* Set a fixed width for each slide */
+    flex-shrink: 0; /* Prevent slides from shrinking */
+}
+
+.movie-card {
+    height: 300px;
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease, z-index 0.4s ease;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-card .movie-card-poster {
+    width: 100%;
+    height: 80%; /* Adjust height to accommodate title/rating */
+    object-fit: cover;
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.movie-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    box-sizing: border-box;
+}
+
+.movie-card:hover .movie-card-content {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+}
+
+.movie-card-content h3 {
+    margin: 0 0 0.2rem 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.movie-rating {
+    color: #f5c518;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.movie-rating svg {
+    margin-right: 3px;
+}
+
+.play-trailer-btn {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background-color: #f5c518;
+    color: #000;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.celebrity-card {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.celebrity-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.celebrity-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 5px 0;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+.movie-card:hover {
+    z-index: 10;
+}
+
+.movie-card .movie-card-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.movie-card:hover .movie-card-poster {
+    filter: brightness(0.4);
+    transform: scale(1.05);
+}
+
+.movie-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    box-sizing: border-box;
+}
+
+.movie-card:hover .movie-card-content {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+}
+
+.movie-card-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.movie-card-content p {
+    margin: 0 0 1rem 0;
+    font-size: 0.8rem;
+    color: #ccc;
+    max-height: 60px;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+}
+
+.movie-rating {
+    color: #f5c518;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.movie-rating svg {
+    margin-right: 5px;
+}
+
+.play-trailer-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #f5c518;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+.celebrities-section {
+    padding: 1rem 0 0.5rem 0; /* Reduced bottom padding to decrease gap */
+}
+
+.celebrity-card {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.celebrity-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.celebrity-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 5px 0;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.celebrity-card:hover .celebrity-name {
+    opacity: 1;
+}
+
+
+/* Trailer Modal */
+
+.trailer-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #1a1a1a;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+#youtube-trailer {
+    width: 100%;
+    height: 500px;
+}
+
+/* Custom Navigation Buttons */
+.custom-nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.custom-prev-btn,
+.custom-next-btn {
+    background-color: #f5c518;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-prev-btn:hover,
+.custom-next-btn:hover {
+    background-color: #d4af37;
+}
+
+/* Wishlist Icon */
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 9999; /* Ensure it's always on top */
+    transition: color 0.3s ease;
+}
+
+.wishlist-icon:hover {
+    color: #f5c518;
+}
+
+.wishlist-icon.added-to-wishlist {
+    color: #f5c518;
+}
+
+/* --- Mobile responsive tweaks for index.php --- */
+
+/* Show hamburger, collapse nav on small screens */
+@media (max-width: 900px) {
+    header .container {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .logo a { font-size: 1.25rem; }
+
+    .hamburger-menu {
+        display: flex;
+        margin-left: auto;
+        z-index: 50;
+    }
+
+    nav {
+        display: none; /* hidden by default on mobile */
+        width: 100%;
+    }
+
+    /* If your JS toggles .open on nav or .active on hamburger */
+    nav.open,
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px;
+        background: #0f0f0f;
+        border-radius: 8px;
+    }
+
+    .search-bar {
+        width: 100%;
+        order: 3;
+        display: flex;
+        gap: 8px;
+    }
+    .search-bar input { flex: 1 1 auto; }
+    .search-bar button { flex: 0 0 auto; }
+
+    /* Movies grid: fewer columns */
+    .movies-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .movie-card {
+        min-height: 220px;
+        border-radius: 6px;
+    }
+
+    .movie-card .poster-wrapper { aspect-ratio: 2/3; }
+
+    .featured-movie-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .featured-movie-poster { width: 160px; height: 240px; }
+
+    /* Swiper / celebrities smaller */
+    .swiper-slide { width: 140px; }
+    #celebrities-swiper { height: auto; padding-bottom: 12px; }
+
+    /* Footer links wrap */
+    footer .footer-links { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .logo a { font-size: 1.1rem; }
+    .hero h1 { font-size: 1.6rem; }
+    .hero { height: 220px; }
+
+    .movies-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap:10px; }
+    .movie-card { min-height: 200px; }
+
+    .movie-card .poster-wrapper img,
+    .featured-movie-poster,
+    .celebrity-card img {
+        object-fit: cover; /* ensure full cover */
+    }
+
+    /* Make clickable buttons full width in stacked layout */
+    .custom-nav-buttons { flex-direction: column; gap: 8px; }
+    .custom-prev-btn, .custom-next-btn { width: 100%; }
+
+    /* Reduce modal size */
+    .modal-content { width: 94%; margin: 6% auto; padding: 12px; }
+    #youtube-trailer { height: 240px; }
+
+    /* Tighten spacing for lists */
+    .movie-list-item { padding: 0.6rem; }
+    .movie-list-item-poster { width: 64px; height: 96px; }
+}
+
+/* Accessibility: ensure focus-visible for keyboard users on small screens */
+@media (max-width: 900px) {
+    .hamburger-menu:focus-visible,
+    .custom-prev-btn:focus-visible,
+    .custom-next-btn:focus-visible {
+        outline: 3px solid rgba(245,197,24,0.25);
+        outline-offset: 2px;
+    }
+}
+
+/* Strong mobile overrides (place at end of file) */
+@media (max-width: 900px) {
+    /* Header / container */
+    header .container {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    /* Hero: let it flow instead of fixed 400px */
+    .hero {
+        height: auto !important;
+        min-height: 180px;
+        padding: 40px 14px;
+        background-position: center;
+        background-size: cover;
+    }
+    .hero h1 { font-size: 1.8rem; }
+    .hero p  { font-size: 0.95rem; }
+
+    /* Ensure nav toggling works visually */
+    nav { width: 100%; }
+    nav.open, nav.active { display: block !important; }
+
+    /* Movies grid: fewer columns; use flexible min width */
+    .movies-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+        gap: 12px !important;
+        align-items: start;
+    }
+
+    /* Movie card: remove fixed height, ensure poster keeps aspect ratio */
+    .movie-card {
+        height: auto !important;
+        min-height: 0 !important;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+    .movie-card .movie-card-poster,
+    .movie-card .poster-wrapper img,
+    .movie-card img {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Make card content visible and stacked on mobile (no hover) */
+    .movie-card-content {
+        position: relative !important;
+        opacity: 1 !important;
+        transform: none !important;
+        padding: 0.75rem !important;
+        background: transparent !important;
+        box-shadow: none;
+    }
+    .movie-card-content h3 { font-size: 1rem; margin-bottom: .25rem; }
+    .movie-card-content p  { font-size: .85rem; color: #ccc; }
+
+    /* Featured movie stack */
+    .featured-movie-card {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 12px;
+        padding: 1rem;
+    }
+    .featured-movie-poster { width: 160px !important; height: auto !important; aspect-ratio: 2 / 3; }
+
+    /* Celebrities / swiper: smaller slide width and visible names */
+    .swiper-slide { width: 140px !important; }
+    .celebrity-card { width: 84px; height: 84px; }
+    .celebrity-name { opacity: 1 !important; position: relative; bottom: auto; left: auto; transform: none; background: transparent; padding: 6px 0 0 0; font-size: .75rem; }
+
+    /* Trailer modal & video sizing */
+    .modal-content { width: 94% !important; margin: 6% auto !important; padding: 12px !important; }
+    #youtube-trailer { height: 240px !important; }
+
+    /* Make search & nav usable on mobile */
+    .search-bar { width: 100%; display:flex; gap:8px; padding:0 12px; box-sizing:border-box; }
+
+    /* Reduce heavy hover transforms on mobile */
+    .movie-card:hover { transform: none !important; box-shadow: none !important; }
+    .movie-card:hover .movie-card-poster { transform: none !important; filter: none !important; }
+}
+
+/* Extra small tweaks for very small screens */
+@media (max-width: 420px) {
+    .movies-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)) !important; gap:10px; }
+    .hero h1 { font-size: 1.5rem; }
+    .logo a { font-size: 1rem; }
+    .hamburger-menu { width: 36px; height: 36px; }
+}
+
+/* Fix: prevent horizontal overflow from sliders on small screens */
+html, body {
+    box-sizing: border-box;
+    overflow-x: hidden; /* hide accidental overflow while layout is fixed */
+}
+
+/* Make swiper wrappers respect container width */
+.swiper, .swiper-container, .swiper-wrapper {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Let slides size responsively instead of forcing a large fixed width */
+.swiper-slide {
+    box-sizing: border-box;
+    width: auto !important; /* allow JS/breakpoints to control width */
+    flex: 0 0 auto;
+    padding: 0 6px; /* small gutter inside slider */
+}
+
+/* Ensure movie cards don't exceed their slide/container */
+.swiper-slide .movie-card,
+.movie-card {
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Mobile: show 2 slides across (adjust as needed) */
+@media (max-width: 480px) {
+    .swiper-slide { width: calc(50% - 12px) !important; } /* two columns */
+    .swiper-slide .movie-card { width: 100%; }
+}
+
+/* Small tablets: show 3 slides across */
+@media (min-width: 481px) and (max-width: 900px) {
+    .swiper-slide { width: calc(33.333% - 12px) !important; } /* three columns */
+}
+
+/* Defensive: reduce any extra grid/gap that may push width */
+.movies-grid, .swiper-wrapper {
+    gap: 12px;
+}
+
+/* Make header sticky at the top */
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(15,15,15,0.95); /* adjust to match theme */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* Keep header inner layout consistent */
+header .container {
+    width: 100%;
+    max-width: var(--container-max, 1200px);
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* subtle shadow added when page is scrolled (toggled by JS) */
+header.sticky-shadow {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.55);
+}
+
+/* Ensure content isn't hidden by sticky header if you use fixed heights */
+body {
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* Fix: anchor hover/details overlay to each movie card */
+.movie-card {
+    position: relative; /* ensures absolutely positioned overlays are placed inside the card */
+    overflow: hidden;   /* prevents overlay or transform from spilling outside the card */
+    z-index: 1;
+}
+
+/* Ensure card content overlay sits at the bottom of the card */
+.movie-card .movie-card-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.0)); /* keeps existing layout but improves readability */
+    padding: 0.75rem;
+}
+
+/* Keep hover reveal animation inside the card */
+.movie-card:hover .movie-card-content,
+.movie-card:focus-within .movie-card-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+.movie-card-actions {
+    display:flex;
+    gap:8px;
+    align-items:center;
+    margin-top:8px;
+}
+
+.ai-summary-btn {
+    background: #f5c518;
+    color: #000;
+    border: 0;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.ai-summary-btn:disabled {
+    opacity: 0.7;
+    cursor: default;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player Test</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+    <section class="video-playlist-section">
+        <div class="container">
+            <h2>Latest Trailers & Clips</h2>
+            <div class="video-playlist-content">
+                <div class="video-player-container">
+                    <iframe id="main-video-player" width="100%" height="400" src="https://www.youtube.com/embed/K289lUFqfWA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-list-container">
+                    <ul id="video-list">
+                        <li class="video-list-item active" data-video-id="K289lUFqfWA">
+                            <img src="images/war 2.jpg" alt="War 2 Poster">
+                            <div class="video-info">
+                                <h3>War 2 Trailer</h3>
+                                <p>Hrithik Roshan, Jr. NTR, Kiara Advani</p>
+                            </div>
+                        </li>
+                        <li class="video-list-item" data-video-id="A_J7kEhY9sM">
+                            <img src="images/one piece.jpg" alt="One Piece Poster">
+                            <div class="video-info">
+                                <h3>One Piece Netflix Trailer</h3>
+                                <p>Live-action adaptation of the popular manga.</p>
+                            </div>
+                        </li>
+                        <li class="video-list-item" data-video-id="DyM0hGtyi-Q">
+                            <img src="images/wednesday.jpg" alt="Wednesday Season 2 Poster">
+                            <div class="video-info">
+                                <h3>Wednesday Season 2 Trailer</h3>
+                                <p>Return of the Addams Family's dark daughter.</p>
+                            </div>
+                        </li>
+                        <li class="video-list-item" data-video-id="9-p6294s4sY">
+                            <img src="images/conjuring.jpg" alt="Conjuring The Last Rites Poster">
+                            <div class="video-info">
+                                <h3>Conjuring The Last Rites Trailer</h3>
+                                <p>The final chapter in the Conjuring series.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainVideoPlayer = document.getElementById('main-video-player');
+            const videoList = document.getElementById('video-list');
+
+            if (videoList) {
+                videoList.addEventListener('click', function(e) {
+                    const listItem = e.target.closest('.video-list-item');
+                    if (listItem) {
+                        // Remove active class from all items
+                        videoList.querySelectorAll('.video-list-item').forEach(item => {
+                            item.classList.remove('active');
+                        });
+
+                        // Add active class to the clicked item
+                        listItem.classList.add('active');
+
+                        // Update the main video player
+                        const videoId = listItem.dataset.videoId;
+                        if (videoId) {
+                            mainVideoPlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

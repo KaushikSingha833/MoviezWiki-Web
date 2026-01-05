@@ -1,5 +1,5 @@
 # MoviezWiki-Web
-<h1 align="center">IMDB Project Clone</h1>
+<h1 align="center">MoviezWiki</h1>
 
 <p align="center">
   A feature-rich web application for searching movies, managing wishlists, and getting AI-powered summaries.

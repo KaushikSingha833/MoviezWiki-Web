@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Put your TMDB v3 API key here (or leave empty to show fallback message)
-$TMDB_API_KEY = 'a4cd6d0a764ed0271ff919d36dd16b67'; // e.g. 'abcd1234...'
+$TMDB_API_KEY = 'YOUR TMDB API KEY'; // e.g. 'abcd1234...'
 
 $q = isset($_GET['q']) ? trim($_GET['q']) : '';
 function esc($s){ return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }

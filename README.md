@@ -1,104 +1,109 @@
-<a name="readme-top"></a>
+# MoviezWiki-Web
+<h1 align="center">MoviezWiki</h1>
 
-<br />
-<div align="center">
-  <a href="https://github.com/KaushikSingha833/MoviezWiki">
-    <img src="https://cdn-icons-png.flaticon.com/512/2503/2503508.png" alt="MoviezWiki Logo" width="100" height="100">
-  </a>
+<p align="center">
+  A feature-rich web application for searching movies, managing wishlists, and getting AI-powered summaries.
+</p>
 
-  <h1 align="center">MoviezWiki</h1>
+<p align="center">
+  <br>
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/KaushikSingha833/MoviezWiki?style=for-the-badge&logo=github">
+  <img alt="GitHub stars" src="https://img.shields.io/github/stars/KaushikSingha833/MoviezWiki?style=for-the-badge&logo=github">
+  <img alt="GitHub license" src="https://img.shields.io/github/license/KaushikSingha833/MoviezWiki?style=for-the-badge">
+  <br>
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/KaushikSingha833/MoviezWiki?style=for-the-badge&logo=github">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues/KaushikSingha833/MoviezWiki?style=for-the-badge&logo=github">
+</p>
 
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com/?lines=The+Next-Gen+Movie+Database;AI-Powered+Insights;PHP+%26+MySQL+Architecture;Secure+User+Management&font=Fira+Code&center=true&width=500&height=30&color=336699&vCenter=true&pause=1000" alt="Typing Animation" />
-  </a>
+![Rainbow Line](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-  <p align="center">
-    A feature-rich web application bridging traditional movie searching with modern generative AI.
-    <br />
-    <br />
-    <a href="https://github.com/KaushikSingha833/MoviezWiki"><strong>Explore the docs »</strong></a>
-    ·
-    <a href="https://github.com/KaushikSingha833/MoviezWiki/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/KaushikSingha833/MoviezWiki/issues">Request Feature</a>
-  </p>
-</div>
+## ✨ Features
 
-<div align="center">
+*   **🎬 Movie & TV Show Search:** Dynamically search a vast database of movies and shows.
+*   **👤 User Authentication:** Secure user registration and login system with session management.
+*   **🔑 Secure Password Recovery:** "Forgot Password" feature with a secure email-based password reset process.
+*   **❤️ Personal Wishlist:** Registered users can add or remove movies from a personalized wishlist.
+*   **🤖 AI-Powered Summaries:** Get intelligent movie summaries on demand, powered by various large language models (Gemini, Mistral, OpenAI).
+*   **🌍 Browse by Country:** A dedicated section to explore content related to different countries.
 
-  ![GitHub repo size](https://img.shields.io/github/repo-size/KaushikSingha833/MoviezWiki?style=for-the-badge&logo=github&color=23ab4c)
-  ![GitHub stars](https://img.shields.io/github/stars/KaushikSingha833/MoviezWiki?style=for-the-badge&logo=github&color=e3b341)
-  ![GitHub license](https://img.shields.io/github/license/KaushikSingha833/MoviezWiki?style=for-the-badge&color=007ec6)
-  ![GitHub last commit](https://img.shields.io/github/last-commit/KaushikSingha833/MoviezWiki?style=for-the-badge&logo=github&color=db4b4b)
-
-</div>
-
----
-
-<details>
-  <summary><strong>Table of Contents (Click to Expand)</strong></summary>
-  <ol>
-    <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#key-features">Key Features</a></li>
-    <li><a href="#tech-stack">Tech Stack</a></li>
-    <li><a href="#project-architecture">Project Architecture</a></li>
-    <li><a href="#getting-started">Getting Started</a></li>
-    <li><a href="#gallery--demos">Gallery & Demos</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
-
----
-
-## 🚀 About The Project
-
-**MoviezWiki** is more than just a movie search tool; it's an intelligent cinematic companion. It upgrades the traditional PHP/MySQL database experience by integrating cutting-edge Large Language Models (LLMs).
-
-Users can manage secure profiles, curate personal wishlists, and critically, get instant, context-aware summaries of films powered by AI, rather than relying on static generic descriptions.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## ✨ Key Features
-
-* **🎬 Dynamic Search Engine:** Instant access to a vast database of movies and TV shows with real-time filtering.
-* **🤖 GenAI Integration:** Utilizing **Gemini, Mistral, and OpenAI** via proxied API calls to generate intelligent, on-demand content summaries.
-* **🔐 Secure Authentication:** Production-grade user lifecycle: registration, secure login, session handling, and bcrypt password hashing.
-* **📧 Account Recovery:** A complete "Forgot Password" flow using secure email verification tokens.
-* **❤️ Interactive Wishlist:** AJAX-powered wishlist management allowing users to save favorites instantaneously without page reloads.
-* **🌍 Geo-Specific Content:** Dedicated browsing sections filtered by country and region.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+![Rainbow Line](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## 🛠️ Tech Stack
 
-This project is built on a robust LAMP stack foundation, modernized with asynchronous JS and AI API integrations.
+<p align="center">
+  <a href="https://www.php.net/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"></a>
+  <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"></a>
+  <a href="https://httpd.apache.org/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="Apache"></a>
+</p>
 
-| Component | Technologies |
-| :--- | :--- |
-| **Frontend** | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) |
-| **Backend** | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white) |
-| **Database** | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white) |
-| **Server** | ![Apache](https://img.shields.io/badge/Apache-D22128?style=flat&logo=apache&logoColor=white) |
-| **AI Models** | ![Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=flat&logo=googlebard&logoColor=white) ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white) |
+*   **AI Integration:** Proxied API calls to Gemini, Mistral, and OpenAI.
+*   **Environment:** Designed for a local server environment like XAMPP, WAMP, or MAMP.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+![Rainbow Line](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## 📂 Project Architecture
+## 🚀 Getting Started
 
-We follow a clean structure separating public assets, configuration, and core logic.
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing.
 
-```text
-MoviezWiki/
-├── api/                  # Server-side AI API Proxy handlers
-├── assets/
-│   ├── css/              # Stylesheets
-│   └── js/               # Interactive client-side scripts (AJAX)
-├── config/
-│   └── config.php        # Database credentials & global settings
-├── IMDB_Project/
-│   └── images/           # Application assets & readme media
-├── includes/             # Reusable PHP components (Header, Nav, Footer)
-├── database_setup.sql    # MySQL schema import file
-├── index.php             # Main application entry point
-└── README.md
+### Prerequisites
+
+You need a local server environment that supports PHP and MySQL. The easiest way is to install **[XAMPP](https://www.apachefriends.org/index.html)**.
+
+*   PHP >= 7.4
+*   MySQL / MariaDB
+*   Apache Web Server
+
+### Installation
+
+1.  **Clone the repository:**
+    If you have Git installed, you can clone it. Otherwise, download the project ZIP and extract it.
+    ```sh
+    git clone https://github.com/KaushikSingha833/MoviezWiki.git
+    ```
+
+2.  **Place the project in your web server's root directory:**
+    Move the `IMDB_Project` folder into the `htdocs` folder of your XAMPP installation (e.g., `C:/xampp/htdocs/`).
+
+3.  **Set up the database:**
+    *   Open `phpMyAdmin` from your XAMPP control panel (usually at `http://localhost/phpmyadmin`).
+    *   Create a new, empty database. You can name it `imdb_project`.
+    *   Select the new database and go to the **Import** tab.
+    *   Click "Choose File" and select the `database_setup.sql` file from the project folder.
+    *   Click **Go** at the bottom of the page to create and populate the necessary tables.
+
+4.  **Configure the application:**
+    *   Open the `config.php` file in the root of the project folder.
+    *   Update the database credentials to match the database you just created. The username is typically `root` with an empty password on a default XAMPP installation.
+        ```php
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "imdb_project"; 
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // ...
+        ?>
+        ```
+    *   **(Optional) Configure AI API Keys:** To use the AI summary feature, open the proxy files in the `/api` directory (e.g., `api/gemini_proxy.php`) and insert your personal API keys where indicated.
+
+5.  **Run the application:**
+    *   Make sure your Apache and MySQL services are running in the XAMPP control panel.
+    *   Open your web browser and navigate to: **`http://localhost/IMDB_Project/`**
+
+![Rainbow Line](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## 📸 Screenshots
+
+*A great README includes screenshots of the application. Feel free to replace these placeholders with your own!*
+
+| Login Page | Home Page |
+| :---: | :---: |
+| ![Login Page](IMDB_Project\images\LOGIN.png) | ![Home Page](IMDB_Project\images\HOMEPAGE.png) |
+
+| Wishlist | AI Summary Modal |
+| :---: | :---: |
+| ![Wishlist](IMDB_Project\images\WISHLIST.png) | ![AI Summary](IMDB_Project\images\AI SUMMARY.png) |
